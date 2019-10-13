@@ -18,7 +18,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<String> notes = new ArrayList<>();
+    static ArrayList<String> notes = new ArrayList<>();
+    static ArrayAdapter arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.listView);
         notes.add("Hello World!");
 
-        final ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1,notes);
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1,notes);
 
         listView.setAdapter(arrayAdapter);
 
